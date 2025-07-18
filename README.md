@@ -1,4 +1,4 @@
-# 🚀 NodeLab - Gerçek Zamanlı Mesajlaşma Sistemi
+# 🚀 NodeLab – Gerçek Zamanlı Mesajlaşma ve Görev Tabanlı Backend Sistemi
 
 Bu proje, Node.js tabanlı, gerçek zamanlı mesajlaşma, kullanıcı yönetimi, RabbitMQ kuyruk sistemi, Redis üzerinden online kullanıcı takibi ve cron job işlemlerini içeren bir backend mimarisidir.
 
@@ -6,32 +6,25 @@ Bu proje, Node.js tabanlı, gerçek zamanlı mesajlaşma, kullanıcı yönetimi,
 
 ## 🔧 Kullanılan Teknolojiler
 
-- **Node.js + Express.js** — Backend API
-- **MongoDB** — NoSQL veritabanı
-- **Redis** — Online kullanıcı takibi
-- **RabbitMQ** — Kuyruk yönetimi (CloudAMQP ile)
-- **Socket.IO** — Gerçek zamanlı mesajlaşma
-- **JWT** — Kimlik doğrulama
-- **Cron Jobs** — Otomatik mesaj zamanlamaları
-- **Winston** — Log yönetimi
-- **Swagger** — API dokümantasyonu
-- **Docker** — Geliştirici ortamı
-- **Rate Limiting & Input Validation** — Güvenlik
+- **Backend & API:** Node.js, Express.js
+- **Veritabanı:** MongoDB, Mongoose
+- **Gerçek Zamanlı:** Socket.IO, Redis
+- **Mesaj Kuyruğu:** RabbitMQ (CloudAMQP)
+- **Kimlik Doğrulama:** JWT, Rate Limiting, Input Validation, Helmet
+- **Zamanlayıcılar:** Cron Jobs
+- **Loglama:** Winston
+- **Dokümantasyon:** Swagger
+- **Containerization:** Docker
 
 ---
 
-## Canlı Test 
+## 🌐 Canlı Test Linkleri
 
-- Canlı test için:
-```
-https://ahmetlab.tech/chat/login
-```
+- 🔐 **Giriş Paneli (Frontend):**  
+  https://ahmetlab.tech/chat/login
 
-- API dokümantasyonu için:
-```
-https://chatapi.ahmetlab.tech/api-docs
-```
-
+- 📘 **Swagger API Dokümantasyonu (Backend):**  
+  https://chatapi.ahmetlab.tech/api-docs
 ---
 
 ## 📦 Proje Yapısı
@@ -107,15 +100,14 @@ MAX_RETRY_COUNT=3
 
 ## 🧩 Ekstra Özellikler
 
-### 🔐 Güvenlik Notları
+### 🔐 Güvenlik Özellikleri
 
-- JWT ile kimlik doğrulama yapılmaktadır.
-- API erişimleri için rate limiting ve input validation uygulanmaktadır.
-- Helmet middleware **bilinçli olarak** kullanılmamıştır. Canlı demo için SSL yapılandırmasına zaman harcamamak amacıyla kaldırılmıştır. Gerçek bir üretim ortamında HTTP güvenlik başlıkları için Helmet önerilir.
-- Kullanıcı veritabanında `deleted` alanı için manuel olarak MongoDB index tanımı yapılmıştır.
-- Swagger UI ile dökümantasyon
-- Winston loglama sistemi
-- Docker ile lokal geliştirme kolaylığı
+- ✅ JWT ile kimlik doğrulama
+- ✅ Helmet ile HTTP güvenlik başlıkları
+- ✅ Rate limiting (DDOS önleme)
+- ✅ Input validation (XSS/Injection koruması)
+- ✅ MongoDB'de `deleted` alanı için indexleme
+- ✅ Winston ile detaylı loglama
 
 
 ---

@@ -10,11 +10,12 @@ const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 const corsOptions = require("./helpers/corsOption");
 const socketIo = require('socket.io');
-const {setupSocket} = require('./socket');
+const { setupSocket } = require('./socket');
 const { connectRedis } = require('./config/redis');
 const { connectRabbitMQ } = require('./config/rabbitmq');
 const logger = require('./utils/logger');
 const errorHandler = require('./middlewares/errorHandler');
+const helmet = require('helmet');
 
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
@@ -22,6 +23,11 @@ const app = express();
 
 
 // Middlewares
+app.use(helmet({
+    crossOriginEmbedderPolicy: false,
+    crossOriginOpenerPolicy: false,
+    contentSecurityPolicy: false,
+}));
 app.use(express.json());
 app.use(cors(corsOptions));
 
@@ -90,8 +96,8 @@ async function runServer() {
                 credentials: true
             }
         });
-   
-            setupSocket(io);
+
+        setupSocket(io);
 
         server.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
