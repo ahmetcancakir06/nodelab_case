@@ -24,14 +24,17 @@ Bu proje, Node.js tabanlı, gerçek zamanlı mesajlaşma, kullanıcı yönetimi,
 
 ```
 nodelab_case/
+├── config/
 ├── controllers/
+├── helpers/
+├── logs
+├── middlewares/
 ├── models/
 ├── routes/
-├── middlewares/
+├── scheduler/           
 ├── socket/
-├── scheduler/           # planAutoMessages, queueAutoMessages
-├── worker/              # messageConsumer.js
-├── utils/               # logger, error handler
+├── utils/              
+├── worker/              
 ├── swagger.js
 ├── Dockerfile
 ├── docker-compose.yml
@@ -90,10 +93,16 @@ MAX_RETRY_COUNT=3
 
 ## 🧩 Ekstra Özellikler
 
+### 🔐 Güvenlik Notları
+
+- JWT ile kimlik doğrulama yapılmaktadır.
+- API erişimleri için rate limiting ve input validation uygulanmaktadır.
+- Helmet middleware **bilinçli olarak** kullanılmamıştır. Canlı demo için SSL yapılandırmasına zaman harcamamak amacıyla kaldırılmıştır. Gerçek bir üretim ortamında HTTP güvenlik başlıkları için Helmet önerilir.
+- Kullanıcı veritabanında `deleted` alanı için manuel olarak MongoDB index tanımı yapılmıştır.
 - Swagger UI ile dökümantasyon
 - Winston loglama sistemi
-- Rate limiting ve input validation
 - Docker ile lokal geliştirme kolaylığı
+
 
 ---
 
