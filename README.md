@@ -20,6 +20,20 @@ Bu proje, Node.js tabanlı, gerçek zamanlı mesajlaşma, kullanıcı yönetimi,
 
 ---
 
+## Canlı Test 
+
+- Canlı test için:
+```
+https://ahmetlab.tech/chat/login
+```
+
+- API dokümantasyonu için:
+```
+https://chatapi.ahmetlab.tech/api-docs
+```
+
+---
+
 ## 📦 Proje Yapısı
 
 ```
@@ -51,8 +65,8 @@ nodelab_case/
 /api-docs
 ```
 
----
 
+---
 ## ⚙️ Ortam Değişkenleri (.env örneği)
 
 ```env
